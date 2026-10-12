@@ -9,6 +9,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -52,6 +53,8 @@ fun DemoScreen(modifier: Modifier = Modifier) {
         .padding(all = 10.dp)
         .border(width = 2.dp, color = Color.Black)
 
+    val secondModifier = Modifier.height(100.dp)
+
     Column(
         Modifier.padding(20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -59,7 +62,7 @@ fun DemoScreen(modifier: Modifier = Modifier) {
     ) {
         Text(
             "Hello Compose",
-            mymodifier,
+            mymodifier.then(secondModifier),
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold
         )
